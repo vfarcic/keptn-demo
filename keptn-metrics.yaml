@@ -5,7 +5,7 @@ metadata:
   name: prometheus
 spec:
   type: prometheus
-  targetServer: "http://prometheus-operated.observability:9090"
+  targetServer: "http://prometheus-operated.monitoring:9090"
 ---
 apiVersion: metrics.keptn.sh/v1
 kind: KeptnMetric
@@ -14,5 +14,5 @@ metadata:
 spec:
   provider:
     name: prometheus
-  query: prometheus_http_requests_total{code="200", container="prometheus", endpoint="http-web", handler="/-/healthy", job="kube-prometheus-stack-prometheus", namespace="observability", service="kube-prometheus-stack-prometheus"}
+  query: prometheus_http_requests_total{code="200", container="prometheus", endpoint="http-web", handler="/-/healthy", job="observability-stack-kube-p-prometheus", namespace="monitoring", service="observability-stack-kube-p-prometheus"}
   fetchIntervalSeconds: 10
